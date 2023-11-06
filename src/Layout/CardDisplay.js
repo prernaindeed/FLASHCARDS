@@ -15,7 +15,12 @@ function CardDisplay({cards}) {
             setCurrentIndex(currentIndex + 1);
             setIsFront(true);
         } else {
-            (window.confirm("Restart cards? \n \n Click 'cancel' to return to home page.") ? setCurrentIndex(1) : history.push("/"))
+            if (window.confirm("Restart cards? \n \n Click 'cancel' to return to home page.")) {
+                setCurrentIndex(1);
+                setIsFront(true);
+             } else {
+                history.push("/")
+             }
         }
     }
    

@@ -25,7 +25,7 @@ function CardDisplay({cards}) {
             <p>{cardContent}</p>
             <div>
                 <button className="btn btn-secondary mr-2" onClick={flipHandler}>Flip</button>
-                { !isFront ? <button className="btn btn-primary" onClick={nextHandler}>Next</button> : <></> }
+                { !isFront ? <button className="btn btn-primary" onClick={nextHandler}>Next</button> : <div></div> }
             </div>
         </div>
     );

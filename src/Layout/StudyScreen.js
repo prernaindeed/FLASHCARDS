@@ -4,6 +4,7 @@ import {useParams, useLocation} from "react-router-dom";
 import { readDeck } from "../utils/api";
 import NavBar from "./NavBar";
 import CardDisplay from "./CardDisplay"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function StudyScreen() {
     
@@ -36,7 +37,7 @@ function StudyScreen() {
                 <div>
                     <h3>Not Enough Cards</h3>
                     <p> You need at least 3 cards to Study. There are {deck.cards.length} cards in this deck</p>
-                    <button className="btn btn-primary"> + Add Cards</button>
+                    <Link to={`/decks/${deck.id}/cards/new`}><button className="btn btn-primary"> + Add Cards</button></Link>
                 </div> : <CardDisplay cards={deck.cards}/>}
         </div>
     );

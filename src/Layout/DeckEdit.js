@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 
-function EditDeck() {
+function DeckEdit() {
   const [deck, setDeck] = useState({})
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
@@ -47,13 +47,13 @@ function EditDeck() {
         <div className="form-group">
             <label htmlFor="name">Name:</label>
             <br/>
-            <input placeholder="Deck Name" type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input style={{'width':'100%'}} placeholder="Deck Name" type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         <br/>
         <div className="form-group">
             <label htmlFor="description">Description:</label>
             <br/>
-            <textarea placeholder="Brief description of the deck" id="description" type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <textarea style={{'width':'100%'}} placeholder="Brief description of the deck" id="description" type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
         <Link to={"/decks/"+ params.deckId}><button class="btn btn-secondary">Cancel</button></Link>
         {'  '}
@@ -64,4 +64,4 @@ function EditDeck() {
   );
 }
 
-export default EditDeck;
+export default DeckEdit;
